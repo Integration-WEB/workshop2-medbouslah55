@@ -1,0 +1,15 @@
+.text, .h1, .textarea {
+  color: red;
+  font-size: 20px;
+}
+
+.btn {
+  border: 2px solid yellow;
+}
+
+.langage {
+  content: "HTML5";
+  content: "REACT";
+}
+
+/*# sourceMappingURL=style.css.map */

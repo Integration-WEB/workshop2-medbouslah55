@@ -1,0 +1,96 @@
+// $primary-color:#ff752F;
+// body{
+//     color:$primary-color;
+// }
+
+// .button{
+//     display:
+//     inline-block;
+//     color:$primary-color;
+//     text-align:
+//     center;
+//     border: solid 2px $primary-color;
+// }
+// .button-alert{
+//     a{
+//         @extend .button;
+//         border-radius: 4px;
+//     }
+// }
+
+// #box{
+//     font: {
+//         weight: bold;
+//         family: Algerian;
+//     }
+//     @mixin inline-block($margen :10px) {
+//         display: inline-block;
+//         margin-left: $margen;
+
+//     }
+// }
+
+// @for $i from 1 through 3{
+//     .m-#{$i}{
+//         margin: 0 ($i * 0.25rem);
+//     }
+// }
+
+// .btn{
+//     background: $primary-color;
+//     border-radius: 5px;
+//     @if lightness($primary-color)>50%{
+//         color: #ffb60b;
+//     }
+//     @else{
+//         color: #ff1f17;
+//     }
+// }
+
+
+//workshop2
+
+//1
+.text {
+    color: rgb(255, 0, 0);
+    font-size: 20px;
+}
+
+.textarea{
+    @extend .text;
+}
+
+.h1 {
+    @extend .text;
+}
+
+//2
+@mixin border($color: yellow, $width : 2px) {
+    border: $width solid $color;
+}
+
+.btn {
+    @include border(yellow, 2px)
+}
+//3
+@function background($background-color){
+    @if $background-color != #FFFFFF{
+        @return white;
+    }@else{
+        @return black;
+    }
+}
+//4
+$langages: 'HTML5','CSS3','JAVA','REACT';
+@function test1($list){
+    @return nth($list,1);
+}
+@function test2($list){
+    @return nth($langages,length($langages));
+}
+.langage{
+    content: test1($langages);
+    content: test2($langages);
+}
+
+
